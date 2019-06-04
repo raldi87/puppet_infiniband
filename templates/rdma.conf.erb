@@ -1,0 +1,56 @@
+# rdma.conf: Managed by puppet.
+#
+# Load IPoIB
+<% if @rdma_config['load_ipoiv'].downcase == 'yes' then -%>
+IPOIB_LOAD=yes
+<% else -%>
+IPOIB_LOAD=no
+<% end -%>
+# Load SRP (SCSI Remote Protocol initiator support) module
+<% if @rdma_config['load_srp'].downcase == 'yes' then -%>
+SRP_LOAD=yes
+<% else -%>
+SRP_LOAD=no
+<% end -%>
+# Load SRPT (SCSI Remote Protocol target support) module
+<% if @rdma_config['load_srpt'].downcase == 'yes' then -%>
+SRPT_LOAD=yes
+<% else -%>
+SRPT_LOAD=no
+<% end -%>
+# Load iSER (iSCSI over RDMA initiator support) module
+<% if @rdma_config['load_iser'].downcase == 'yes' then -%>
+ISER_LOAD=yes
+<% else -%>
+ISER_LOAD=no
+<% end -%>
+# Load iSERT (iSCSI over RDMA target support) module
+<% if @rdma_config['load_isert'].downcase == 'yes' then -%>
+ISERT_LOAD=yes
+<% else -%>
+ISERT_LOAD=no
+<% end -%>
+# Load RDS (Reliable Datagram Service) network protocol
+<% if @rdma_config['load_rds'].downcase == 'yes' then -%>
+RDS_LOAD=yes
+<% else -%>
+RDS_LOAD=no
+<% end -%>
+# Load NFSoRDMA client transport module
+<% if @rdma_config['load_nfsordma_server'].downcase == 'yes' then -%>
+XPRTRDMA_LOAD=yes
+<% else -%>
+XPRTRDMA_LOAD=no
+<% end -%>
+# Load NFSoRDMA server transport module
+<% if @rdma_config['load_nfsordma_client'].downcase == 'yes' then -%>
+SVCRDMA_LOAD=yes
+<% else -%>
+SVCRDMA_LOAD=no
+<% end -%>
+# Load Tech Preview device driver modules
+<% if @rdma_config['tech_preview'].downcase == 'yes' then -%>
+TECH_PREVIEW_LOAD=yes
+<% else -%>
+TECH_PREVIEW_LOAD=no
+<% end -%>

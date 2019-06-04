@@ -1,0 +1,14 @@
+{
+  "name": "rld87-infiniband",
+  "version": "0.1.0",
+  "author": "rld87",
+  "summary": "Install and configure infiniband",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"version_requirement":">= 1.0.0","name":"puppetlabs-stdlib"}
+  ]
+}
+
