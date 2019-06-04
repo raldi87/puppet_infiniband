@@ -1,3 +1,4 @@
+
 # infiniband module for puppet
 
 #### Table of Contents
@@ -27,18 +28,16 @@ Download this module and copy to your puppetserver module path
 * Integrated with HIERA
 
 ## Usage
-
-  Hiera:
-  infiniband::rdma_config:
-           load_ipoiv: 'yes'
-           load_srp: 'no'
-           load_srpt: 'no'
-           tech_preview: 'yes'
-           load_nfsordma_client: 'no'
-           load_nfsordma_server: 'no'
-           load_rds: 'no'
-           load_isert: 'no'
-           load_iser: 'no'
+infiniband::rdma_config:
+            load_ipoiv: 'yes'
+            load_srp: 'no'
+            load_srpt: 'no'
+            tech_preview: 'yes'
+            load_nfsordma_client: 'no'
+            load_nfsordma_server: 'no'
+            load_rds: 'no'
+            load_isert: 'no'
+            load_iser: 'no'
            
   infiniband::interfaces_hash:
     ib0: 
@@ -59,7 +58,6 @@ Download this module and copy to your puppetserver module path
       onboot: "yes"
       bootproto: "none"
       mtu: 65520
-  
   
 ## Limitations
 
