@@ -4,18 +4,13 @@
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with infiniband](#setup)
-    * [What infiniband affects](#what-infiniband-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with infiniband](#beginning-with-infiniband)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+3. [Usage - Configuration options and additional functionality](#usage)
+4. [Limitations - OS compatibility, etc.](#limitations)
+
 
 ## Overview
 
-This module is used for managing RDMA devices with puppet .
+This module is used for managing RDMA devices and configuration with puppet .
 
 ## Module Description
 
