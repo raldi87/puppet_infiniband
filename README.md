@@ -1,4 +1,5 @@
 
+
 # infiniband module for puppet
 
 #### Table of Contents
@@ -28,6 +29,7 @@ Download this module and copy to your puppetserver module path
 * Integrated with HIERA
 
 ## Usage
+```
 infiniband::rdma_config:
             load_ipoiv: 'yes'
             load_srp: 'no'
@@ -58,7 +60,7 @@ infiniband::rdma_config:
       onboot: "yes"
       bootproto: "none"
       mtu: 65520
-  
+```  
 ## Limitations
 
 Tested on RHEL7 with puppet3/4/5
