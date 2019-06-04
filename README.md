@@ -1,6 +1,5 @@
 
-
-# infiniband module for puppet
+# Infiniband module for puppet
 
 #### Table of Contents
 
@@ -19,6 +18,7 @@ This module is used for managing RDMA devices and configuration with puppet .
 Download this module and copy to your puppetserver module path
 
 /etc/puppetlabs/modules
+Remove puppet from the name
 
 ## Setup
 
