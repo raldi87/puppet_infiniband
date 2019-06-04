@@ -1,4 +1,4 @@
-# infiniband
+# infiniband module for puppet
 
 #### Table of Contents
 
@@ -15,65 +15,59 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+This module is used for managing RDMA devices with puppet .
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
+Download this module and copy to your puppetserver module path
 
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+/etc/puppetlabs/modules
 
 ## Setup
 
 ### What infiniband affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-### Beginning with infiniband
-
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+* Manages the IB devices in /etc/sysconfig/network-scripts
+* Manages the rdma.conf file
+* Integrated with HIERA
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
-
-## Reference
-
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
-
+  Hiera:
+  infiniband::rdma_config:
+           load_ipoiv: 'yes'
+           load_srp: 'no'
+           load_srpt: 'no'
+           tech_preview: 'yes'
+           load_nfsordma_client: 'no'
+           load_nfsordma_server: 'no'
+           load_rds: 'no'
+           load_isert: 'no'
+           load_iser: 'no'
+           
+  infiniband::interfaces_hash:
+    ib0: 
+      ipaddress: 192.168.15.11
+      netmask: 255.255.255.0
+      type: "Infiniband"
+      connected_mode: "yes"
+      manage_ipaddr: "true"
+      onboot: "yes"
+      bootproto: "none"
+      mtu: 65520
+    ib1:
+      ipaddress: 192.168.25.21
+      netmask: 255.255.255.0
+      type: "Infiniband"
+      connected_mode: "yes"
+      manage_ipaddr: "true"
+      onboot: "yes"
+      bootproto: "none"
+      mtu: 65520
+  
+  
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Tested on RHEL7 with puppet3/4/5
 
-## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
